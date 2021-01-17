@@ -1,7 +1,8 @@
 
 def resolve():
-    l = list(map(int, input().split()))
-    print(min(l))
+    a, b = map(int, input().split())
+    c, d = map(int, input().split())
+    print(a*d-c*b)
 
 import sys
 from io import StringIO
@@ -19,13 +20,21 @@ class TestClass(unittest.TestCase):
         self.assertEqual(out, output)
 
     def test_入力例_1(self):
-        input = """5 3 7 11"""
-        output = """3"""
+        input = """1 2
+3 4"""
+        output = """-2"""
         self.assertIO(input, output)
 
     def test_入力例_2(self):
-        input = """100 100 1 100"""
+        input = """0 -1
+1 0"""
         output = """1"""
+        self.assertIO(input, output)
+
+    def test_入力例_3(self):
+        input = """100 100
+100 100"""
+        output = """0"""
         self.assertIO(input, output)
 
 

@@ -1,7 +1,12 @@
-
 def resolve():
-    l = list(map(int, input().split()))
-    print(min(l))
+    n = int(input())
+    if n % 2 == 0:
+        print("White")
+    else:
+        print("Black")
+
+if __name__ == "__main__": #提出時のみ復活させる
+    resolve()
 
 import sys
 from io import StringIO
@@ -19,13 +24,13 @@ class TestClass(unittest.TestCase):
         self.assertEqual(out, output)
 
     def test_入力例_1(self):
-        input = """5 3 7 11"""
-        output = """3"""
+        input = """2"""
+        output = """White"""
         self.assertIO(input, output)
 
     def test_入力例_2(self):
-        input = """100 100 1 100"""
-        output = """1"""
+        input = """5"""
+        output = """Black"""
         self.assertIO(input, output)
 
 
