@@ -1,9 +1,21 @@
 def resolve():
-    print('Yes')
+    n = int(input())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+
+    sum = 0
+    for i in range(n):
+        sum += int(a[i])*int(b[i])
+
+    if(sum == 0):
+        print("Yes")
+    else:
+        print("No")
 
 
-# if __name__ == "__main__":  # 提出時のみ復活させる
-#     resolve()
+
+if __name__ == "__main__":  # 提出時のみ復活させる
+    resolve()
 
 import sys
 from io import StringIO
@@ -21,18 +33,24 @@ class TestClass(unittest.TestCase):
         self.assertEqual(out, output)
 
     def test_入力例_1(self):
-        input = """3 5"""
+        input = """2
+-3 6
+4 2"""
         output = """Yes"""
         self.assertIO(input, output)
 
     def test_入力例_2(self):
-        input = """16 2"""
+        input = """2
+4 5
+-1 -3"""
         output = """No"""
         self.assertIO(input, output)
 
     def test_入力例_3(self):
-        input = """12 15"""
-        output = """No"""
+        input = """3
+1 3 5
+3 -6 3"""
+        output = """Yes"""
         self.assertIO(input, output)
 
 
